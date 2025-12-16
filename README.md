@@ -67,6 +67,8 @@ The primary objective is to **determine which RAG configuration works best for a
 ![rag1](https://github.com/user-attachments/assets/a784f30b-a0b3-4d0e-bc97-2c84aa594244)
 ![rag2](https://github.com/user-attachments/assets/5f6e6a67-33a4-4976-acb4-590e43cf4306)
 
+https://github.com/user-attachments/assets/97c036f0-c8a6-4b6a-a64c-3145cde8fbae
+
 
 
 
