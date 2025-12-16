@@ -76,15 +76,3 @@ ChromaDB
 Groq LLM API (optional)
 
 Streamlit
-
-Usage (High Level)
-
-Upload documents
-
-Index across all pipelines
-
-Ask a question
-
-Compare pipeline results
-
-Receive the best grounded answer
