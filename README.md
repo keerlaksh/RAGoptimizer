@@ -1,78 +1,65 @@
-RAG Experimental Framework
+# RAG Experimental Framework
 
-A research-grade Retrieval-Augmented Generation (RAG) system that compares multiple RAG pipelines and identifies the best configuration for a given document and query set.
+## Overview
+**RAG Experimental Framework** is a research-grade Retrieval-Augmented Generation (RAG) system designed to compare multiple RAG pipelines and identify the optimal configuration for specific document and query sets.
 
-Overview
+Large Language Models (LLMs) often struggle to reliably answer questions based on long documents. They may hallucinate, miss critical details, or rely heavily on pre-training data rather than the provided context. **This project addresses these limitations by treating RAG design as a controlled experiment.**
 
-Large Language Models (LLMs) cannot reliably answer questions from long documents on their own.
-They may hallucinate, miss details, or rely on prior knowledge.
+---
 
-This project solves that problem using Retrieval-Augmented Generation (RAG) and treats RAG design as a controlled experiment.
+## Why RAG?
+Retrieval-Augmented Generation improves LLM responses by grounding them in external, verifiable documents. The standard workflow used in this framework includes:
 
-Why RAG?
+1.  **Extract:** Ingest text from documents (PDF / TXT).
+2.  **Split:** Divide text into meaningful chunks.
+3.  **Embed:** Convert chunks into vector embeddings.
+4.  **Retrieve:** Find the most relevant chunks for a specific query.
+5.  **Generate:** Produce answers strictly from the retrieved context.
 
-RAG improves LLM answers by:
+[Image of Retrieval Augmented Generation architecture diagram]
 
-Extracting text from documents (PDF / TXT)
+This process ensures that the resulting answers are accurate, verifiable, and free from hallucinations.
 
-Splitting text into chunks
+---
 
-Converting chunks into vector embeddings
+## What This Project Does
+This framework moves beyond a "one-size-fits-all" approach. It builds multiple RAG pipelines simultaneously to test different variables:
 
-Retrieving the most relevant chunks per query
+* **Embedding Models:** Tests different ways of representing text vectors.
+* **Chunk Sizes:** Tests different granularities of text splitting.
 
-Generating answers strictly from retrieved context
+### The Experiment Process
+1.  **Ingest:** Loads the document.
+2.  **Permutate:** Creates multiple pipelines with different configurations.
+3.  **Run:** Executes the same user query across all pipelines.
+4.  **Evaluate:** Scores each pipeline using objective metrics.
+5.  **Select:** Automatically identifies the best-performing pipeline.
 
-This ensures answers are grounded, accurate, and verifiable.
+### Outputs
+* The final, most accurate answer.
+* Detailed evaluation metrics.
+* A comprehensive pipeline comparison report.
 
-What This Project Does
+---
 
-Builds multiple RAG pipelines using different:
+## Key Features
+* **PDF Document Ingestion:** Robust handling of document formats.
+* **Multiple Embedding Strategies:** Comparative analysis of vector models.
+* **Memory-Efficient:** Uses lazy loading to optimize resource usage.
+* **LLM-Based Generation:** Integration with Groq (with fallback modes).
+* **Scientific Evaluation:** Measures performance rather than guessing.
+* **Auto-Selection:** automatically routes the query to the best configuration.
 
-Embedding models
+---
 
-Chunk sizes
+## Goal
+The primary objective is to **determine which RAG configuration works best for a given document and query set — using measurement, not guesswork.**
 
-Answers the same query using each pipeline
+---
 
-Evaluates each pipeline scientifically
-
-Selects the best-performing pipeline
-
-Returns:
-
-Final answer
-
-Evaluation metrics
-
-Pipeline comparison report
-
-Key Features
-
-PDF document ingestion
-
-Multiple embedding strategies
-
-Lazy-loaded, memory-efficient indexing
-
-LLM-based answer generation (Groq / fallback mode)
-
-Quantitative RAG evaluation
-
-Best-pipeline selection
-
-Goal
-
-Determine which RAG configuration works best for a given document and query set — using evidence, not intuition.
-
-Tech Stack
-
-Python
-
-Sentence Transformers
-
-ChromaDB
-
-Groq LLM API (optional)
-
-Streamlit
+## Tech Stack
+* **Language:** Python
+* **Embeddings:** Sentence Transformers
+* **Vector Store:** ChromaDB
+* **LLM:** Groq API (Optional/Configurable)
+* **Interface:** Streamlit
