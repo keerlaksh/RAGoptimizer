@@ -63,3 +63,10 @@ The primary objective is to **determine which RAG configuration works best for a
 * **Vector Store:** ChromaDB
 * **LLM:** Groq API (Optional/Configurable)
 * **Interface:** Streamlit
+
+![rag1](https://github.com/user-attachments/assets/a784f30b-a0b3-4d0e-bc97-2c84aa594244)
+![rag2](https://github.com/user-attachments/assets/5f6e6a67-33a4-4976-acb4-590e43cf4306)
+
+
+
+
