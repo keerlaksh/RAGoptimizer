@@ -1,52 +1,90 @@
-🧠 RAG Experimental Framework
+RAG Experimental Framework
 
-This project is a research-grade Retrieval-Augmented Generation (RAG) system designed to compare multiple RAG configurations and identify which setup performs best for a given set of documents and queries.
+A research-grade Retrieval-Augmented Generation (RAG) system that compares multiple RAG pipelines and identifies the best configuration for a given document and query set.
 
-❓ Why RAG?
+Overview
 
-Large Language Models (LLMs) do not truly read PDFs and do not remember uploaded files by default.
-They may hallucinate or miss important details.
+Large Language Models (LLMs) cannot reliably answer questions from long documents on their own.
+They may hallucinate, miss details, or rely on prior knowledge.
 
-RAG solves this by:
+This project solves that problem using Retrieval-Augmented Generation (RAG) and treats RAG design as a controlled experiment.
 
-Extracting text from documents (PDF/TXT)
+Why RAG?
 
-Splitting text into meaningful chunks
+RAG improves LLM answers by:
 
-Converting chunks into embeddings (vectors)
+Extracting text from documents (PDF / TXT)
 
-Retrieving the most relevant chunks for a question
+Splitting text into chunks
 
-Feeding only that context to the LLM for a grounded answer
+Converting chunks into vector embeddings
 
-🔬 What Makes This Project Different?
+Retrieving the most relevant chunks per query
 
-This is not just a chatbot.
+Generating answers strictly from retrieved context
 
-It:
+This ensures answers are grounded, accurate, and verifiable.
 
-Runs multiple RAG pipelines (different embeddings & chunk sizes)
+What This Project Does
 
-Answers the same question using each pipeline
+Builds multiple RAG pipelines using different:
 
-Evaluates performance (groundedness, hallucination, context usage)
+Embedding models
 
-Automatically selects the best-performing pipeline
+Chunk sizes
 
-🚀 Key Features
+Answers the same query using each pipeline
 
-📄 PDF upload & processing
+Evaluates each pipeline scientifically
 
-🧩 Multiple chunking + embedding strategies
+Selects the best-performing pipeline
 
-🤖 LLM-based answers using retrieved context
+Returns:
 
-📊 Scientific evaluation & comparison
+Final answer
 
-🏆 Best-pipeline selection
+Evaluation metrics
 
-🎯 Goal
+Pipeline comparison report
 
-“Given the same documents and questions, which RAG configuration produces the most accurate, grounded answers?”
+Key Features
 
-This framework helps you prove, not guess, what works best.
+PDF document ingestion
+
+Multiple embedding strategies
+
+Lazy-loaded, memory-efficient indexing
+
+LLM-based answer generation (Groq / fallback mode)
+
+Quantitative RAG evaluation
+
+Best-pipeline selection
+
+Goal
+
+Determine which RAG configuration works best for a given document and query set — using evidence, not intuition.
+
+Tech Stack
+
+Python
+
+Sentence Transformers
+
+ChromaDB
+
+Groq LLM API (optional)
+
+Streamlit
+
+Usage (High Level)
+
+Upload documents
+
+Index across all pipelines
+
+Ask a question
+
+Compare pipeline results
+
+Receive the best grounded answer
